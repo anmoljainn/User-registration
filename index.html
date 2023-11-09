@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>User Registration</title>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Create an Account</h1>
+        <div class="steps-container">
+            <div class="steps"><a href="#username"><i style="font-size: 50px;color: #fca311;" class="fi fi-sr-user"></i></a></div>
+            <div class="steps"><a href="#password"><i style="font-size: 50px;color: #fca311;" class="fi fi-sr-lock"></i></a></div>
+            <div class="steps"><a href="#email"><i style="font-size: 50px;color: #fca311;" class="fi fi-sr-envelope"></i></a></div>
+            <div class="steps"><a href="#complete"><i style="font-size: 50px;color:#fca311;" class="fi fi-sr-checkbox"></i></a></div>
+            <hr>
+
+        </div>
+
+        <div class="slider">
+            <div class="slide" id="username">
+                <h4>Username</h4>
+
+                <p>Please create a username!</p>
+
+                <ul>
+                    <li>Username must be between 8 and 20 characters</li>
+                    <li>No spaces or special characters allowed</li>
+                </ul>
+                <form name="userForm">
+                    <input style="width: 75%;" type="text" name="username" placeholder="Username" minlength="8" maxlength="20" required/><br>
+
+                    <input style="width: 36%;" type="text" name="firstName" placeholder="First Name" required/>
+
+                    <input style="width: 36%;" type="text" name="lastName" placeholder="Last Name" required/><br>
+
+                    <button type="button" onclick="return validateUser()"><a href="#password">Enter</a></button>
+
+                </form>
+
+            </div>
+
+            <div class="slide" id="password">
+                <h4>Password</h4>
+                <p>Please create a password for your account!</p>
+
+                <ul>
+                    <li>Must be between 8 and 15 characters long</li>
+                    <li>Must contain at least one uppercase letter, one lowercase letter, and one number</li>
+                    <li>No special characters allowed</li>
+                    <li>Please avoid using personal information as a password</li>
+                </ul>
+
+                <form name="userPassword">
+                    <input style="width: 60%;" type="password" name="password" placeholder="Password" required/><br>
+                    <button type="button" onclick="return validatePassWord()"><a href="#email">Enter</a></button>
+                </form>
+
+            </div>
+
+            <div class="slide" id="email">
+                <h4>Email</h4>
+                <p>Please input your email address!</p>
+
+                <ul>
+                    <li>Please enter a valid email address</li>
+                    <li>Must use example@example.com format</li>
+                    <li>Email address will not be shared with third party vendors</li>
+                </ul>
+
+                <form name="userEmail">
+                    <input style="width: 70%;" type="email" name="email" placeholder="Email Address" required/><br>
+                    <button type="button" onclick="return validateEmail()"><a href="#complete">Enter</a></button>
+                </form>
+
+            </div>
+
+            <div class="slide" id="complete">
+                <h2>Almost There!</h2>
+                <h4 style="text-align:left;">You have completed all necessary steps to complete user registration. Before submitting, please visit previous slides to verify all information is correct.</h4>
+                <h4 style="text-align:left;">If your information is correct, please hit the submit button below.</h4>
+
+                <button type="button" onclick="regComplete()"><a href="#complete">Submit</a></button>
+
+            </div>
+
+        </div>
+
+
+
+
+
+    </div>
+
+    <script src="myscript.js"></script>
+</body>
+
+</html>
