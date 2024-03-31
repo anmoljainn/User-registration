@@ -20,7 +20,7 @@ function authenticateUser(event) {
 
 
     setTimeout(function () {
-        document.getElementById('message').innerHTML = 'User authenticated successfully!';
+        document.getElementById('message').innerHTML = 'User login successfully!';
         document.getElementById('loginForm').reset();
     }, 1000);
 }
