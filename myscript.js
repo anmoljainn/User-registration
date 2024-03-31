@@ -1,69 +1,38 @@
-function validateUser() {
-    let x = document.forms["userForm"]["username"].value;
-    if (x == "") {
-      alert("Username must be filled out");
-      return false;
-    
-    } else if ((x.length < 8) || (x.length > 20)) {
-        alert("Username must be between 8 and 15 characters.");
-        return false;
+function registerUser(event) {
+    event.preventDefault();
 
-    }
+    let username = document.getElementById('username').value;
+    let email = document.getElementById('email').value;
+    let password = document.getElementById('password').value;
 
-    let y = document.forms["userForm"]["firstName"].value;
-    if (y=="") {
-        alert("First name must be filled out");
-        return false;
-    }
 
-    let z = document.forms["userForm"]["lastName"].value;
-    if (z=="") {
-        alert("Last name must be filled out");
-        return false;
-    }
-  }
-
-function validatePassWord(){
-    let x = document.forms["userPassword"]["password"].value;
-    if (x==""){
-        alert("Please create user password");
-        return false;
-
-    } else if ((x.length < 8) || (x.length > 15)){
-        alert("Your password must be between 8 and 15 characters");
-        return false;
-
-    } else if (x.search(/[a-z]/)<0){
-        alert("Password must contain at least one lowercase letter");
-        return false;
-    
-    } else if (x.search(/[A-Z]/)<0){
-        alert("Password must contain at least one uppercase letter");
-        return false;
-   
-    } else if (x.search(/[0-9]/)<0){
-        alert("Password must contain at least one number");
-        return false;
-    }
-
-        
+    setTimeout(function () {
+        document.getElementById('message').innerHTML = 'User registered successfully!';
+        document.getElementById('signupForm').reset();
+    }, 1000);
 }
 
-function validateEmail(){
-    const validEmail = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-    let x = document.forms["userEmail"]["email"].value;
+function authenticateUser(event) {
+    event.preventDefault();
 
-    if (x.match(validEmail)){
-        return true;
-    } else {
-        alert("Please enter a valid email address");
-        return false;
-    }
+    let email = document.getElementById('loginEmail').value;
+    let password = document.getElementById('loginPassword').value;
+
+
+    setTimeout(function () {
+        document.getElementById('message').innerHTML = 'User authenticated successfully!';
+        document.getElementById('loginForm').reset();
+    }, 1000);
 }
 
+function toggleForm() {
+    let authForms = document.getElementById('authForms').querySelectorAll('.authForm');
+    authForms.forEach(function (form) {
+        if (form.style.display === 'block') {
+            form.style.display = 'none';
+        } else {
+            form.style.display = 'block';
+        }
+    });
 
-
-
-function regComplete(){
-    alert("Congratulations! Your registration is now complete!")
 }
